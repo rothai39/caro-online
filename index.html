@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caro Online - Play with Friends</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>⭕ CARO ONLINE</h1>
+      <p>Thách đấu cùng bạn bè!</p>
+    </header>
+
+    <section id="homeScreen" class="panel">
+      <h2>Chơi Caro</h2>
+      <input id="playerName" placeholder="Tên của bạn" maxlength="20">
+      <button id="createBtn" class="primary">＋ Tạo phòng mới</button>
+
+      <div class="separator">HOẶC</div>
+
+      <input id="roomInput" placeholder="Nhập mã phòng">
+      <button id="joinBtn" class="secondary">Tham gia phòng</button>
+      <p id="homeMessage" class="message"></p>
+    </section>
+
+    <section id="gameScreen" class="panel hidden">
+      <div class="room-info">
+        <div>
+          <small>MÃ PHÒNG</small>
+          <h2 id="roomCode">------</h2>
+        </div>
+        <button id="copyBtn" class="small-btn">Copy mã</button>
+      </div>
+
+      <div class="players">
+        <div id="playerX" class="player">
+          <span class="symbol x">X</span>
+          <span id="nameX">Người chơi X</span>
+        </div>
+        <div id="playerO" class="player">
+          <span class="symbol o">O</span>
+          <span id="nameO">Đang chờ...</span>
+        </div>
+      </div>
+
+      <div id="gameStatus" class="status">
+        Đang kết nối...
+      </div>
+
+      <div class="board-controls">
+        <label for="zoom">Thu phóng bàn cờ</label>
+        <input id="zoom" type="range" min="35" max="100" value="65">
+        <span id="zoomValue">65%</span>
+      </div>
+
+      <div id="boardViewport">
+        <div id="board"></div>
+      </div>
+
+      <div id="winnerBox" class="winner hidden">
+        <h2 id="winnerText">X CHIẾN THẮNG!</h2>
+        <button id="resetBtn" class="primary">↻ RESET VÁN ĐẤU</button>
+      </div>
+
+      <button id="leaveBtn" class="leave-btn">Rời phòng</button>
+      <p id="gameMessage" class="message"></p>
+    </section>
+
+    <footer>Made with ❤️ for friends</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
